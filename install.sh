@@ -1,5 +1,8 @@
-pip3 install FlashGBX --break-system-packages
-systemctl stop brltty-udev.service
+pip3 install FlashGBX
+pip3 install python-telegram-bot
+pip3 install pyserial
+pip3 install pillow
+sudo systemctl stop brltty-udev.service
 sudo systemctl mask brltty-udev.service
-systemctl stop brltty.service
-systemctl disable brltty.service
+sudo systemctl stop brltty.service
+sudo systemctl disable brltty.service
