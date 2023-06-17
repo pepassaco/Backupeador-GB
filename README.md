@@ -13,7 +13,7 @@ python3 -m venv venv
 source venv/bin/activate
 ./install.sh
 ```
-Finally, edit `localCOnfig.py` according to your needs (with the corresponding token and chat ID of your Telegram bot).
+Finally, edit `localConfig.py` according to your needs (with the corresponding token and chat ID of your Telegram bot).
 
 
 ## Usage
