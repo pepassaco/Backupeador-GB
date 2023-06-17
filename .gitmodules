@@ -1,0 +1,3 @@
+[submodule "FlashGBX"]
+	path = FlashGBX
+	url = https://github.com/lesserkuma/FlashGBX.git
