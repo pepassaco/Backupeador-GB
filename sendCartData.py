@@ -12,9 +12,11 @@ with open("info.txt", "r") as file:
             add2msg = True
         elif "Disconnected" in line:
             add2msg = False
-
         if add2msg:
             message+=str(line)
+
+if "invalid" in message:
+    message = "Error: unable to read SRAM from cartridge. Make sure that it is well connected and the contacts are clean :)"
 
 
 async def main():
