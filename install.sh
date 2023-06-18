@@ -1,1 +1,1 @@
-pip3 install FlashGBX python-telegram-bot pyserial pillow
+pip3 install FlashGBX python-telegram-bot pyserial pillow RPi.GPIO
