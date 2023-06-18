@@ -3,6 +3,18 @@ Machine for automatically backing up your GB/GBC/GBA saves send them to a telegr
 
 TODO: Include images
 
+
+## Hardware
+
+The Bill of Materials for this project is as follows:
+
+- GBxCart v1.4 or later
+- Any Raspberry Pi (I curently unse a model 1B but any should do the job)
+- Female USB-C connector with M12 nut ([example](https://es.aliexpress.com/item/1005005353938938.html?spm=a2g0o.productlist.main.23.12103f13FtLXxS&algo_pvid=202b6bab-1dce-4aaa-a6e6-8f7d0727ee7f&algo_exp_id=202b6bab-1dce-4aaa-a6e6-8f7d0727ee7f-11&pdp_npi=3%40dis%21EUR%210.6%210.51%21%21%21%21%21%402100bc5c16871270433503211d07ba%2112000032749371723%21sea%21ES%21171535914&curPageLogUid=2ATkGmBvNDMz))
+- Male micro-USB connector
+- (optional) Female Ethernet connector with M21 nut ([example](https://es.aliexpress.com/item/1005004863110077.html?spm=a2g0o.productlist.main.23.1fe03a00XDMMWr&algo_pvid=96532dc2-2c98-4aab-bd91-8b40c7b6020d&algo_exp_id=96532dc2-2c98-4aab-bd91-8b40c7b6020d-11&pdp_npi=3%40dis%21EUR%214.71%213.53%21%21%21%21%21%402100b0d116871273445681941d0742%2112000030793371200%21sea%21ES%21171535914&curPageLogUid=2sRKscPJbolo))
+
+
 ## Requirements
 
 Just some basic dependencies:
