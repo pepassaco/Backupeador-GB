@@ -1,3 +1,7 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt install libopenjp2-7
+sudo apt install python3-pip
 pip3 install FlashGBX
 pip3 install python-telegram-bot
 pip3 install pyserial
