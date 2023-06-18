@@ -20,6 +20,7 @@ As usual:
 
 ```
 git clone https://github.com/pepassaco/Backupeador-GB.git --recurse-submodules
+cd Backupeador-GB
 python3 -m venv venv
 source venv/bin/activate
 ./install.sh
