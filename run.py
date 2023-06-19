@@ -13,16 +13,16 @@ def detectedGB(channel):
 	bckp = backupeador()
 	bckp.backupGB()
 
-
-
 def main():
-
-	GPIO.add_event_detect(17, GPIO.FALLING, callback=detectedGBA, bouncetime=3000)
-	GPIO.add_event_detect(23, GPIO.FALLING, callback=detectedGB, bouncetime=3000)
 
 	while(True):
 		try:
-			time.sleep(1)                    
+			if not GPIO.input(23) == 0:
+				detectedGB()
+			elif not GPIO.input(17) == 0:
+				detectedGBA()
+			else:
+				time.sleep(0.01)                    
 		except KeyboardInterrupt:
 			GPIO.cleanup()       # clean up GPIO on CTRL+C exit
 			exit()
@@ -34,7 +34,6 @@ def main():
 if __name__ == '__main__':
 
 	GPIO.setmode(GPIO.BCM)
-
 	GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
