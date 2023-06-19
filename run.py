@@ -17,8 +17,8 @@ def detectedGB(channel):
 
 def main():
 
-	GPIO.add_event_detect(17, GPIO.FALLING, callback=detectedGBA, bouncetime=300)
-	GPIO.add_event_detect(23, GPIO.FALLING, callback=detectedGB, bouncetime=300)
+	GPIO.add_event_detect(17, GPIO.FALLING, callback=detectedGBA, bouncetime=3000)
+	GPIO.add_event_detect(23, GPIO.FALLING, callback=detectedGB, bouncetime=3000)
 
 	while(True):
 		try:
