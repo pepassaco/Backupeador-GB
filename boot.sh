@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/backupeador/Backupeador-GB/
+cd INSTALLATION_PATH/Backupeador-GB/
 git pull origin main
 #git submodule update --recursive --remote
 source venv/bin/activate

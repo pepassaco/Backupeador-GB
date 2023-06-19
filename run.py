@@ -3,12 +3,12 @@ import time
 from backupeador import backupeador
 
 
-def detectedGBA(channel):
+def detectedGBA():
 	print("GBA game selected")
 	bckp = backupeador()
 	bckp.backupGBA()
 
-def detectedGB(channel):
+def detectedGB():
 	print("GBC game selected")
 	bckp = backupeador()
 	bckp.backupGB()
