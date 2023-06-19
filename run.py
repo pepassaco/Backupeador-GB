@@ -17,9 +17,9 @@ def main():
 
 	while(True):
 		try:
-			if not GPIO.input(23) == 0:
+			if not GPIO.input(23):
 				detectedGB()
-			elif not GPIO.input(17) == 0:
+			elif not GPIO.input(17):
 				detectedGBA()
 			else:
 				time.sleep(0.01)                    
