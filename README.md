@@ -19,9 +19,9 @@ TODO: Include simple schematic
 
 ## Installation
 
-0. Disconnect the USB wire going from the GBxCart to the Raspberry Pi
+- Disconnect the USB wire going from the GBxCart to the Raspberry Pi
 
-1. Install some basic dependencies:
+- Install some basic dependencies:
 
 ```
 sudo apt update
@@ -30,7 +30,7 @@ sudo apt install libopenjp2-7
 sudo apt install python3-pip
 ```
 
-2. Install Backupeador as usual: 
+- Install Backupeador as usual: 
 
 ```
 git clone https://github.com/pepassaco/Backupeador-GB.git --recurse-submodules
@@ -40,11 +40,11 @@ source venv/bin/activate
 ./install.sh
 ```
 
-3. Edit `localConfig.py` according to your needs (with the corresponding **token** and **chat ID** of your Telegram bot).
+- Edit `localConfig.py` according to your needs (with the corresponding **token** and **chat ID** of your Telegram bot).
 
-4. Edit `boot.sh` by replacing `INSTALLATION_PATH` with the path to the directory where you cloned the repo.
+- Edit `boot.sh` by replacing `INSTALLATION_PATH` with the path to the directory where you cloned the repo.
 
-5. Create a new systemctld service by first executing:
+- Create a new systemctld service by first executing:
 
 ```
 sudo nano /lib/systemd/system/backupeador.service
@@ -73,7 +73,7 @@ sudo systemctl enable backupeador.service
 sudo systemctl start backupeador.service
 ```
 
-6. Connect the GBxCart back to the Raspberry.
+- Connect the GBxCart back to the Raspberry.
 
 
 
