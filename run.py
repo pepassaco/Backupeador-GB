@@ -33,9 +33,9 @@ def main():
 
 if __name__ == '__main__':
 
-	print("Starting Backupeador. Project by github.com/pepassaco")
- 	print("Have fun! :)")
-	
+        print("Starting Backupeador. Project by github.com/pepassaco")
+        print("Have fun! :)")
+
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(pinGB, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
         GPIO.setup(pinGBA, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)

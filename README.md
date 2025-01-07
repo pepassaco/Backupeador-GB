@@ -26,8 +26,7 @@ TODO: Include simple schematic
 ```
 sudo apt update
 sudo apt upgrade -y
-sudo apt install libopenjp2-7
-sudo apt install python3-pip
+sudo apt install libopenjp2-7 python3-pip
 ```
 
 2. Install Backupeador as usual: 
@@ -35,8 +34,6 @@ sudo apt install python3-pip
 ```
 git clone https://github.com/pepassaco/Backupeador-GB.git --recurse-submodules
 cd Backupeador-GB
-python3 -m venv venv
-source venv/bin/activate
 ./install.sh
 ```
 
