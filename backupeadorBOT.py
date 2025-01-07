@@ -12,8 +12,8 @@ class backupeadorBOT():
 		async with self.bot:
 			await self.bot.send_message(text=message, chat_id=mychatID)
 
-	async def uploadLatestFile(self):
-		files = glob.glob(savesdir+'*')
+	async def uploadLatestFile(self, dir):
+		files = glob.glob(dir+'*')
 		latest_file = max(files, key=os.path.getctime)
 
 		async with self.bot:

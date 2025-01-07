@@ -8,6 +8,9 @@ pinGB = 25
 
 allow_bckp_ROM = True
 
+savesdir = "Saves/"
+ROMsdir = "ROMs/"
+
 # Strings
 if lang == "GAL":
         strErrorCart = "Erro: non foi posible ler a SRAM do cartucho. Asegura que estea ben conectado e que os contactos estean limpos :)"
@@ -33,9 +36,8 @@ else:
 
 # Don't edit unless you know what you are doing
 cmdInfoGB = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'dmg', '--action', 'info']
-cmdSavGB = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'dmg', '--action', 'backup-save', '--overwrite', '--save-filename-add-datetime', 'Saves/']
-cmdROMGB = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'dmg', '--action', 'backup-rom', '--overwrite', '--save-filename-add-datetime', 'Saves/']
+cmdSavGB = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'dmg', '--action', 'backup-save', '--overwrite', '--save-filename-add-datetime', savesdir]
+cmdROMGB = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'dmg', '--action', 'backup-rom', '--overwrite', '--save-filename-add-datetime', ROMsdir]
 cmdInfoGBA = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'agb', '--action', 'info']
-cmdSavGBA = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'agb', '--action', 'backup-save', '--overwrite', '--save-filename-add-datetime', 'Saves/']
-cmdROMGBA = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'agb', '--action', 'backup-rom', '--overwrite', '--save-filename-add-datetime', 'Saves/']
-savesdir = "Saves/"
+cmdSavGBA = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'agb', '--action', 'backup-save', '--overwrite', '--save-filename-add-datetime', savesdir]
+cmdROMGBA = ['python3', 'FlashGBX/run.py', '--cli', '--cfgdir', 'subdir', '--mode', 'agb', '--action', 'backup-rom', '--overwrite', '--save-filename-add-datetime', ROMsdir]

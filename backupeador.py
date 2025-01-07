@@ -13,11 +13,11 @@ class backupeador():
 		asyncio.run(myBOT.sendInfo(message))
 		if noterror:
 			subprocess.run(cmdSavGB, stdout=subprocess.DEVNULL)
-			asyncio.run(myBOT.uploadLatestFile())
+			asyncio.run(myBOT.uploadLatestFile(savesdir))
 			if allow_bckp_ROM:
 				asyncio.run(myBOT.sendInfo(strDumpingROM))
 				subprocess.run(cmdROMGB, stdout=subprocess.DEVNULL)
-				asyncio.run(myBOT.uploadLatestFile())
+				asyncio.run(myBOT.uploadLatestFile(ROMsdir))
 			asyncio.run(myBOT.sendInfo(strThx))
 
 	def backupGBA(self):
@@ -28,11 +28,11 @@ class backupeador():
 		[message, noterror] = self.infoParserGBA(gameInfo.stdout)
 		asyncio.run(myBOT.sendInfo(message))
 		if noterror:
-			asyncio.run(myBOT.uploadLatestFile())
+			asyncio.run(myBOT.uploadLatestFile(savesdir))
 			if allow_bckp_ROM:
 				asyncio.run(myBOT.sendInfo(strDumpingROM))
 				subprocess.run(cmdROMGBA, stdout=subprocess.DEVNULL)
-				asyncio.run(myBOT.uploadLatestFile())
+				asyncio.run(myBOT.uploadLatestFile(ROMsdir))
 			asyncio.run(myBOT.sendInfo(strThx))
 
 	def infoParserGB(self, textOutput):
