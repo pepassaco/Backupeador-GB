@@ -39,15 +39,13 @@ cd Backupeador-GB
 
 3. Edit `localConfig.py` according to your needs (with the corresponding **token** and **chat ID** of your Telegram bot).
 
-4. Edit `boot.sh` by replacing `INSTALLATION_PATH` with the **absolute** path to the directory where you cloned the repo.
-
-5. Create a new systemctld service by first executing:
+4. Create a new systemctld service by first executing:
 
 ```
 sudo nano /lib/systemd/system/backupeador.service
 ```
 
-Filling the new document with the following code:
+Filling the new document with the following code (remember to replace `INSTALLATION_PATH` with the **absolute** path to the directory where you cloned the repo):
 
 ```
 [Unit]
@@ -55,7 +53,7 @@ Description=The backupeador service
 After=network-online.target
 
 [Service]
-ExecStart=/home/backupeador/Backupeador-GB/boot.sh
+ExecStart=INSTALLATION_PATH/boot.sh
 
 [Install]
 WantedBy=multi-user.target
@@ -70,15 +68,13 @@ sudo systemctl enable backupeador.service
 sudo systemctl start backupeador.service
 ```
 
-TODO: Remove periodically the siles from the 'Files' folder
-
-6. Connect the GBxCart back to the Raspberry.
+5. Power off the Raspberry and connect the GBxCart back to it. Once you turn it on again everything should already be working fine :)
 
 
 
 ## Usage
 
-Press the buttons with a cartridge in the reader and a save file will be automatically generated and sent to a Telegram group!
+Press the buttons with a cartridge in the reader and a save file (and ROM file if set up in the settings) will be automatically generated and sent to a Telegram channel!
 
 
 ## Toubleshooting

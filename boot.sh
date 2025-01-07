@@ -1,5 +1,5 @@
 #!/bin/bash
-cd INSTALLATION_PATH/Backupeador-GB/
+cd "$(cd "$(dirname "$0")" && pwd)/.."
 git pull origin main
 #git submodule update --recursive --remote
 source venv/bin/activate
