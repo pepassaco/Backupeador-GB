@@ -19,18 +19,24 @@ class backupeador():
 			else:
 				subprocess.run(cmdSavGB, stdout=subprocess.DEVNULL)
 				save_file = self.get_latest_dumped_file(savesdir)
-				asyncio.run(myBOT.uploadFile(save_file))
-				if not keep_dumped_saves:
-					os.remove(save_file)
-				if allow_bckp_ROM:
-					asyncio.run(myBOT.sendInfo(strDumpingROM))
-					subprocess.run(cmdROMGB, stdout=subprocess.DEVNULL)
-					ROM_file = self.get_latest_dumped_file(ROMsdir)
-					asyncio.run(myBOT.uploadFile(ROM_file))
-					if not keep_dumped_ROMs:
-						os.remove(ROM_file)
+				if save_file is None:
+					asyncio.run(myBOT.sendInfo(strErrorCart))
+				else:
+					asyncio.run(myBOT.uploadFile(save_file))
+					if not keep_dumped_saves:
+						os.remove(save_file)
+					if allow_bckp_ROM:
+						asyncio.run(myBOT.sendInfo(strDumpingROM))
+						subprocess.run(cmdROMGB, stdout=subprocess.DEVNULL)
+						ROM_file = self.get_latest_dumped_file(ROMsdir)
+						if ROM_file is None:
+							asyncio.run(myBOT.sendInfo(strErrorCart))
+						else:
+							asyncio.run(myBOT.uploadFile(ROM_file))
+							if not keep_dumped_ROMs:
+								os.remove(ROM_file)
 
-				asyncio.run(myBOT.sendInfo(strThx))
+					asyncio.run(myBOT.sendInfo(strThx))
 
 	def backupGBA(self):
 		myBOT = backupeadorBOT()
@@ -44,17 +50,23 @@ class backupeador():
 			else:
 				subprocess.run(cmdSavGBA, stdout=subprocess.DEVNULL)
 				save_file = self.get_latest_dumped_file(savesdir)
-				asyncio.run(myBOT.uploadFile(save_file))
-				if not keep_dumped_saves:
-					os.remove(save_file)
-				if allow_bckp_ROM:
-					asyncio.run(myBOT.sendInfo(strDumpingROM))
-					subprocess.run(cmdROMGBA, stdout=subprocess.DEVNULL)
-					ROM_file = self.get_latest_dumped_file(ROMsdir)
-					asyncio.run(myBOT.uploadFile(ROM_file))
-					if not keep_dumped_ROMs:
-						os.remove(ROM_file)
-				asyncio.run(myBOT.sendInfo(strThx))
+				if save_file is None:
+					asyncio.run(myBOT.sendInfo(strErrorCart))
+				else:
+					asyncio.run(myBOT.uploadFile(save_file))
+					if not keep_dumped_saves:
+						os.remove(save_file)
+					if allow_bckp_ROM:
+						asyncio.run(myBOT.sendInfo(strDumpingROM))
+						subprocess.run(cmdROMGBA, stdout=subprocess.DEVNULL)
+						ROM_file = self.get_latest_dumped_file(ROMsdir)
+						if ROM_file is None:
+							asyncio.run(myBOT.sendInfo(strErrorCart))
+						else:
+							asyncio.run(myBOT.uploadFile(ROM_file))
+							if not keep_dumped_ROMs:
+								os.remove(ROM_file)
+					asyncio.run(myBOT.sendInfo(strThx))
 
 	def infoParser(self, textOutput):
 		if textOutput is None or "Invalid" in textOutput:
@@ -83,5 +95,9 @@ class backupeador():
 
 	def get_latest_dumped_file(self, dir):
 		files = glob.glob(dir+'*')
+		if len(files) == 0:
+			return None
 		latest_file = max(files, key=os.path.getctime)
+		if latest_file.endswith('.md'):
+			return None
 		return(latest_file)
