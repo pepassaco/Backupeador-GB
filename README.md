@@ -54,6 +54,8 @@ After=network-online.target
 
 [Service]
 ExecStart=INSTALLATION_PATH/boot.sh
+Restart=always
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
